@@ -1,0 +1,19 @@
+0.  BMP: up to 4 294 967 296 colors (32 bpp); GIF: 256 colors; JPEG: 16 000 000 colors; PNG: 256 colors
+1.  GIF supports animation
+2.  Lossy compression is a data encoding method that discards some data, usually unnoticeable if in an image or video file. Lossless compression recreates the data perfectly and is used mostly for textual data.
+3.  JPEG is lossy compressed.
+4.  "Deleting" a file merely rewrites the metadata that pointed to the file but leaves the disk blocks containing the files contents intact.
+5.  To ensure total deletion, one could use a commercial or free "sanitization" software tool which overwrites deleted memory blocks, for example, by writing zeroes or random characters.
+6.  Stdint.h is a library that includes integer data types of guaranteed fixed size across all implementations.
+7.  Using these integer types (uint8_t, uint32_t, int32_t, uint16_t) ensures the variables represented are exactly 8, 32, or 16 bits.
+8.  BYTE == 8 bits; DWORD == 32 bits; LONG == 32 bits; WORD == 16 bits
+9.  The first two bytes of any BMP file are the characters 'B' and 'M' in 1-byte ASCII encoding.
+10. bfSize is the size in bytes of the bitmap file, while biSize is the total number of byte required by the structure.
+11. If biHeight is negative, the origin of the bitmap begins in the upper left corner (as opposed to lower left).
+12. biBitCount represents the bits per pixel - the color depth - of the BMP.
+13. fopen() would return NULL in copy.c:37 if for some reason the output file couldn't be created.
+14. The third arg in fread() is always 1 in our code because we only want to read 1 object (e.g. 1 pixel, 1 header).
+15. copy.c:70 assigns the value -1 to <padding> if bi.biWidth is 3. >>> int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+16. fseek() sets the file position data for the given stream. You might use this to skip over padding in a bitmap.
+17. SEEK_CUR means to seek from the current location.
+18. Milo Banana dun it.
