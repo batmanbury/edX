@@ -4,8 +4,6 @@ edX.org Problem Sets and Solutions
 **BerkeleyX CS169.1x**
 --------------
 *Engineering Software as a Service* (using Ruby and Rails)
-- This will be a list item
-- This will be a list item
 
 **MITx 6.00.2x**
 --------------
