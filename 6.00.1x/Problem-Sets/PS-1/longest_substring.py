@@ -2,16 +2,22 @@
 
 s = 'azcbobobegghakl'
 
-strings = []
-alphas = []
-
-for j in range(len(s)+1):
+def subcount(s):
+    longest = ''
+    current = ''
     for i in range(len(s)):
-        if s[i:j] != '':
-            strings.append(s[i:j])
+        for c in s[i:]:
+            if current + c == ''.join(sorted(current + c)):
+                current += c
+            else:
+                if len(current) > len(longest):
+                    longest = current
+                    current = ''
+                    break
+                else:
+                    current = ''
+                    break
+    return longest
 
-for substring in strings:
-    if substring == ''.join(sorted(substring)):
-        alphas.append(substring)
 
-print max(alphas, key=len)
+print 'Longest substring in alphabetical order is: ' + subcount(s)
